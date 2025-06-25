@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Top N Songs</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+    <div class="top-header">
+        <h2>Get Top N Songs</h2>
+    </div>
+
+    <div class="bottom-container">
+        <div class="left-panel">
+            <label for="topN">Number of Songs (n):</label>
+            <input type="number" id="topN" value="20" min="1">
+            <button id="fetchBtn">Fetch</button>
+        </div>
+
+        <div class="right-panel" id="results">
+            <!-- Results populated dynamically -->
+        </div>
+    </div>
+
+    <script>
+        function fetchTopSongs() {
+            const n = document.getElementById("topN").value || 10;
+            fetch(`/song/top?top_n=${n}`)
+                .then(response => response.json())
+                .then(data => {
+                    const resultsDiv = document.getElementById("results");
+                    resultsDiv.innerHTML = "";
+
+                    if (data.success && data.data.length > 0) {
+                        const list = document.createElement("ul");
+                        data.data.forEach(song => {
+                            const item = document.createElement("li");
+                            item.textContent = `${song.title} by ${song.artist} (Score: ${song.score})`;
+                            list.appendChild(item);
+                        });
+                        resultsDiv.appendChild(list);
+                    } else {
+                        resultsDiv.textContent = "No songs found.";
+                    }
+                });
+        }
+
+        document.getElementById("fetchBtn").addEventListener("click", fetchTopSongs);
+        setInterval(fetchTopSongs, 100);  // Auto-fetch every 10ms (extremely aggressive)
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Top N Songs</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+    <h2>Get Top N Songs</h2>
+    <label for="topN">Number of Songs (n): </label>
+    <input type="number" id="topN" value="20" min="1">
+    <button id="fetchBtn">Fetch</button>
+
+    <div id="results"></div>
+
+    <script>
+        function fetchTopSongs() {
+            const n = document.getElementById("topN").value || 10;
+            fetch(`/song/top?top_n=${n}`)
+                .then(response => response.json())
+                .then(data => {
+                    const resultsDiv = document.getElementById("results");
+                    resultsDiv.innerHTML = "";
+
+                    if (data.success && data.data.length > 0) {
+                        const list = document.createElement("ul");
+                        data.data.forEach(song => {
+                            const item = document.createElement("li");
+                            item.textContent = `${song.title} by ${song.artist} (Score: ${song.score})`;
+                            list.appendChild(item);
+                        });
+                        resultsDiv.appendChild(list);
+                    } else {
+                        resultsDiv.textContent = "No songs found.";
+                    }
+                });
+        }
+
+        document.getElementById("fetchBtn").addEventListener("click", fetchTopSongs);
+        setInterval(fetchTopSongs, 100);  // Auto-fetch every 10ms (extremely aggressive)
+    </script>
+</body>
+</html> -->

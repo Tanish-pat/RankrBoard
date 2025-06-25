@@ -1,0 +1,19 @@
+2025-06-25 06:24:13,248 - INFO - Benchmark started
+2025-06-25 06:24:14,657 - INFO - --- Starting benchmark with 100 workers ---
+2025-06-25 06:24:36,771 - INFO - Completed in 22.11s | Avg: 0.208s | P95: 0.239s
+2025-06-25 06:24:36,771 - INFO - --- Starting benchmark with 500 workers ---
+2025-06-25 06:25:02,051 - INFO - Completed in 25.28s | Avg: 0.517s | P95: 1.240s
+2025-06-25 06:25:02,051 - INFO - --- Starting benchmark with 1000 workers ---
+2025-06-25 06:25:26,924 - INFO - Completed in 24.87s | Avg: 0.407s | P95: 1.044s
+2025-06-25 06:25:26,924 - INFO - --- Starting benchmark with 2000 workers ---
+2025-06-25 06:25:50,473 - INFO - Completed in 23.55s | Avg: 0.215s | P95: 0.677s
+2025-06-25 06:25:50,474 - INFO - --- Starting benchmark with 5000 workers ---
+2025-06-25 06:26:14,256 - INFO - Completed in 23.78s | Avg: 0.038s | P95: 0.065s
+2025-06-25 06:26:14,256 - INFO - --- Starting benchmark with 10000 workers ---
+2025-06-25 06:26:38,018 - INFO - Completed in 23.76s | Avg: 0.037s | P95: 0.062s
+2025-06-25 06:26:38,018 - INFO - --- Starting benchmark with 20000 workers ---
+2025-06-25 06:27:04,896 - INFO - Completed in 26.88s | Avg: 1.909s | P95: 3.436s
+2025-06-25 06:27:04,897 - INFO - --- Starting benchmark with 50000 workers ---
+2025-06-25 06:27:28,682 - INFO - Completed in 23.78s | Avg: 0.042s | P95: 0.083s
+2025-06-25 06:27:28,682 - INFO - --- Starting benchmark with 100000 workers ---
+2025-06-25 06:27:52,539 - INFO - Completed in 23.85s | Avg: 0.039s | P95: 0.067s
